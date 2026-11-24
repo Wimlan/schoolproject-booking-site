@@ -1,0 +1,304 @@
+:root {
+  --white: #ffffff;
+  --gray: #bcb7ad;
+  --dark: #00505b;
+  --light: #00a7a5;
+  --yellow: #ddf94e;
+}
+
+/* Grundlayout för body */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: linear-gradient(135deg, var(--dark) 0%, var(--light) 100%);
+  min-height: 100vh;
+}
+.container {
+  margin: 0 auto;
+  max-width: 992px;
+  padding: 20px;
+}
+
+/* Resets för header */
+.app-header * {
+  box-sizing: border-box;
+}
+
+.app-header {
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  color: var(--white);
+
+  padding: 14px 18px;
+  border-bottom: 4px solid var(--yellow);
+}
+
+.app-header__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.app-header__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.app-header__logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--yellow);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: var(--dark);
+}
+
+.app-header__title {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.app-header__nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-header__link {
+  color: var(--white);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease,
+    transform 100ms ease;
+}
+.app-header__link:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+.app-header__link--logout {
+  background-color: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.app-header__link--logout:hover {
+  background-color: var(--yellow);
+  color: var(--dark);
+  transform: translateY(-1px);
+}
+
+.app-header__sub {
+  margin-top: 8px;
+  color: var(--gray);
+  font-size: 12px;
+}
+
+main {
+  padding: 10px;
+}
+h1,
+h2 {
+  color: var(--white);
+}
+
+/* Centrera login-blocket */
+.login-container {
+  flex: 1; /* tar upp resterande höjd */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* Login-box */
+.login-box {
+  background: linear-gradient(135deg, #bcb7ad 0%, #ffffff 100%);
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  width: 350px;
+  text-align: center;
+  border-top: 6px solid #00a7a5; /* accentfärg */
+}
+
+/* Rubrik */
+.login-box h1 {
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #00505b; /* mörk rubrik */
+  letter-spacing: 1px;
+}
+
+/* Etiketter */
+.login-box label {
+  display: block;
+  margin: 12px 0 6px;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+}
+
+/* Inputs */
+.login-box input[type="text"],
+.login-box input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  transition: border-color 0.2s ease;
+}
+
+.login-box input:focus {
+  border-color: #00a7a5;
+  outline: none;
+}
+
+/* Knapp */
+.login-box button {
+  margin-top: 15px;
+  padding: 12px;
+  width: 100%;
+  background-color: #00a7a5; /* ljus färg */
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.1s ease;
+}
+
+.login-box button:hover {
+  background-color: #00505b; /* mörk vid hover */
+  transform: translateY(-2px);
+}
+
+/* Wrapper för Lägg tillformuläret */
+.new-todo-form {
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Rubrik */
+.new-todo-form h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+/* Etiketter */
+.new-todo-form label {
+  text-align: right;
+  font-weight: bold;
+  padding-top: 6px;
+}
+
+/* Inputs och select */
+.new-todo-form input[type="text"],
+.new-todo-form input[type="password"],
+.new-todo-form select,
+.new-todo-form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Knapp */
+.new-todo-form button {
+  grid-column: 1 / -1; /* knappen över hela bredden */
+  padding: 10px;
+  background-color: var(--yellow);
+  color: var(--dark);
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.new-todo-form button:hover {
+  background-color: #00505b;
+}
+
+table {
+  border-collapse: collapse;
+}
+.booking-table {
+  table-layout: fixed;
+  width: 660px;
+}
+.booking-table th,
+.booking-table td {
+  box-sizing: border-box;
+  width: 110px;
+  height: 64px;
+  text-align: center;
+  vertical-align: middle;
+}
+.booking-table td p {
+  margin: 4px 0 0;
+}
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+dialog[open] {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%);
+}
+
+/* Footer styling */
+footer {
+  background-color: #00505b;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  margin-top: auto; /* trycker footern längst ner */
+}
+
+/* Små skärmar */
+@media (max-width: 520px) {
+  .app-header__title {
+    font-size: 18px;
+  }
+  .app-header__logo {
+    width: 30px;
+    height: 30px;
+  }
+}

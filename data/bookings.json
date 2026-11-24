@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "day": "Måndag",
+    "timeslot": "08:00-10:00",
+    "room_id": 1,
+    "bookedBy": 2
+  },
+  {
+    "id": 2,
+    "day": "Tisdag",
+    "timeslot": "08:00-10:00",
+    "room_id": 2,
+    "bookedBy": 1
+  },
+  {
+    "id": 3,
+    "day": "Onsdag",
+    "timeslot": "08:00-10:00",
+    "room_id": 3,
+    "bookedBy": 2
+  },
+  {
+    "id": 4,
+    "day": "Onsdag",
+    "timeslot": "10:00-12:00",
+    "room_id": 1,
+    "bookedBy": 1
+  }
+]
