@@ -114,8 +114,49 @@ main {
   padding: 10px;
 }
 h1,
-h2 {
+h2,
+h3,
+p,
+li,
+label {
   color: var(--white);
+}
+
+a {
+  color: var(--dark);
+}
+
+.button,
+button {
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  padding: 8px 18px;
+}
+
+.button {
+  background-color: var(--white);
+  color: var(--dark);
+  border: var(--dark) solid 1px;
+}
+
+button {
+  background-color: var(--dark);
+  color: var(--white);
+  border: var(--gray) solid 1px;
+}
+.flex-row {
+  display: flex;
+  gap: 10px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 /* Centrera login-blocket */
@@ -280,6 +321,11 @@ dialog[open] {
   left: 50%;
   margin: 0;
   transform: translate(-50%, -50%);
+  background-color: var(--white);
+}
+
+dialog[open] p {
+  color: var(--dark);
 }
 
 /* Footer styling */

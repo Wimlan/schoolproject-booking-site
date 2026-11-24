@@ -76,10 +76,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['open_booking'])) {
 
 <?php if ($bookdialog): ?>
 <dialog open>
-    <form>
-        <p>Boka rum <?= htmlspecialchars($room['name']) ?> på <?= htmlspecialchars($requestedDay) ?> <?= htmlspecialchars($requestedTimeSlot) ?></p>
-        <button type="submit">Boka</button>
-        <a href="/pages/booking.php?room=<?= htmlspecialchars($roomId) ?>" type="button">Avbryt</a>
+    <form action="/booking_add.php" method="post">
+        <input type="hidden" name="room_id" value="<?= htmlspecialchars($roomId) ?>">
+        <input type="hidden" name="day" value="<?= htmlspecialchars($requestedDay) ?>">
+        <input type="hidden" name="timeslot" value="<?= htmlspecialchars($requestedTimeSlot) ?>">
+        <input type="hidden" name="bookedBy" value="<?= htmlspecialchars($user['id']) ?>">
+        <p>Boka rum <?= htmlspecialchars($room['name']) ?> på <?= htmlspecialchars($requestedDay) ?> <?= htmlspecialchars($requestedTimeSlot) ?>?</p>
+        <button type="submit">Ja, Boka</button>
+        <a class="button" href="/pages/booking.php?room=<?= htmlspecialchars($roomId) ?>" type="button">Avbryt</a>
     </form>
 </dialog>
 <?php endif; ?>

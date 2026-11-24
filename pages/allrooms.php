@@ -30,13 +30,17 @@ if ($filter === 'free' && $day !== '' && $timeSlot !== '') {
 
 <div class="new-room-form ">
 <h2>Lägg till ett nytt rum</h2>
-<form action="/room_add.php" method="post">
+<form class="flex-row" action="/room_add.php" method="post">
+    <div class="flex-column">
     <label for="name">Namn:</label>
     <input type="text" id="name" name="name" required>
 
     <label for="capacity">Antal platser:</label>
     <input type="text" id="capacity" name="capacity" required>
+    <button type="submit">Skapa</button>
+    </div>
 
+    <div class="flex-column">
     <label for="tv">TV:</label>
     <select id="tv" name="tv">
         <option value="1">Ja</option>
@@ -48,8 +52,9 @@ if ($filter === 'free' && $day !== '' && $timeSlot !== '') {
         <option value="1">Ja</option>
         <option value="0">Nej</option>
     </select>
+    </div>
   <br>
-  <button type="submit">Skapa</button>
+
 </form>
 </div>
 

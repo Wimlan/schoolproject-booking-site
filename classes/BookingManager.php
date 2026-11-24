@@ -9,6 +9,8 @@ class BookingManager {
         $this->store = new JsonFile($filePath);
     }
 
+    public function all(): array { return $this->store->read(); }
+
     public function isBooked(int $roomId, string $day, string $timeSlot): bool {
         return $this->bookedBy($roomId, $day, $timeSlot) !== null;
     }
@@ -37,9 +39,21 @@ class BookingManager {
         return $roomBookings;
     }
 
+      public function nextId(): int {
+        $max = 0; foreach ($this->all() as $r) { if ($r['id'] > $max) $max = $r['id']; }
+        return $max + 1;
+    }
+
+
         public function add(Booking $booking): void {
         $bookings = $this->store->read();
         $bookings[] = ['id'=>$booking->id, 'room_id'=>$booking->room_id, 'day'=>$booking->day, 'timeslot'=>$booking->timeslot, 'bookedBy'=>$booking->bookedBy];
+        $this->store->write($bookings);
+    }
+
+
+    public function delete(int $id){
+        $bookings = array_values(array_filter($this->all(), fn($b) => $b['id'] !== $id));
         $this->store->write($bookings);
     }
 }
