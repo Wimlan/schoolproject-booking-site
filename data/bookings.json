@@ -28,10 +28,24 @@
         "bookedBy": 2
     },
     {
-        "id": 9,
+        "id": 11,
         "room_id": 2,
-        "day": "Tisdag",
-        "timeslot": "10:00-12:00",
+        "day": "Fredag",
+        "timeslot": "08:00-10:00",
         "bookedBy": 2
+    },
+    {
+        "id": 12,
+        "room_id": 3,
+        "day": "Måndag",
+        "timeslot": "08:00-10:00",
+        "bookedBy": 3
+    },
+    {
+        "id": 13,
+        "room_id": 1,
+        "day": "Torsdag",
+        "timeslot": "08:00-10:00",
+        "bookedBy": 3
     }
 ]

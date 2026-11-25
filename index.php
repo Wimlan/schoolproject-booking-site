@@ -1,4 +1,12 @@
 <?php
+session_start([
+    'cookie_lifetime' => 28800,
+    'gc_maxlifetime' => 28800,
+    'cookie_path' => '/',
+    'cookie_secure' => !empty($_SERVER['HTTPS']),
+    'cookie_httponly' => true,
+    'cookie_samesite' => 'Lax'
+]);
 require_once __DIR__.'/classes/UserManager.php';
 $um = new UserManager(__DIR__.'/data/users.json');
 
@@ -8,13 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
     $user = $um->findByUsername($username);
     if ($user && password_verify($password, $user['passwordHash'])) {
-        setcookie('userid', (string)$user['id'], [
-            'expires'  => time() + 3600*8,
-            'path'     => '/',
-            'secure'   => !empty($_SERVER['HTTPS']),
-            'httponly' => true,
-            'samesite' => 'Lax'
-        ]);
+        session_regenerate_id(true);
+        $_SESSION['userid'] = (int)$user['id'];
         header('Location: /pages/dashboard.php'); exit;
     } else {
         $error = 'Felaktigt användarnamn eller lösenord';

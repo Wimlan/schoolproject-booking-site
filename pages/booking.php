@@ -1,8 +1,6 @@
 <?php
-    $pageTitle   = 'Dashboard';
-    $pageHeading = 'Uppgifter';
+
 require_once __DIR__.'/../includes/auth_guard.php';
-require_once __DIR__.'/../includes/header.php';
 require_once __DIR__.'/../classes/RoomManager.php';
 require_once __DIR__.'/../classes/BookingManager.php';
 $takenicon = '../assets/img/taken.png';
@@ -12,6 +10,9 @@ $bookingManager = new BookingManager(__DIR__.'/../data/bookings.json');
 $userManager = new UserManager(__DIR__.'/../data/users.json');
 $roomId = (int)($_GET['room'] ?? 0);
 $room = $roomManager->findById($roomId);
+$pageTitle   = htmlspecialchars($room['name'] ?? 'Rum saknas');
+$pageHeading = htmlspecialchars($room['name'] ?? 'Rum saknas');
+require_once __DIR__.'/../includes/header.php';
 
 $days = ['Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag'];
 $timeSlots = ['08:00-10:00', '10:00-12:00', '12:00-14:00', '14:00-16:00'];
@@ -30,7 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['open_booking'])) {
     <?php exit; ?>
 <?php endif; ?>
 
-<h1><?= htmlspecialchars($room['name']) ?></h1>
 <p>Rum kapacitet: <?= htmlspecialchars($room['capacity']) ?></p>
 <p>TV: <?= $room['tv'] ? 'Ja' : 'Nej' ?></p>
 <p>Stereo: <?= $room['stereo'] ? 'Ja' : 'Nej' ?></p>

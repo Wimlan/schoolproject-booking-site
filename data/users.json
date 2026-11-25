@@ -8,5 +8,10 @@
         "id": 2,
         "username": "wilma",
         "passwordHash": "$2y$12$JAkzoHlPR.LKl/.V1nC.N.B4xH9VVuBlXfAYbvdF8Tu7ygivOPtqC"
+    },
+    {
+        "id": 3,
+        "username": "testanvändare",
+        "passwordHash": "$2y$12$wbmcHWr2Ht9tSqNUGBVfBOsc6IrCwiZ.ITm0Y6hm2ZvEXpeNayBd2"
     }
 ]

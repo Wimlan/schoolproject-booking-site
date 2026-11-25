@@ -1,37 +1,44 @@
 [
-    {
-        "id": 1,
-        "name": "Liseberg",
-        "capacity": 10,
-        "tv": true,
-        "stereo": true
-    },
-    {
-        "id": 2,
-        "name": "Ullevi",
-        "capacity": 6,
-        "tv": false,
-        "stereo": false
-    },
-    {
-        "id": 3,
-        "name": "Skansen",
-        "capacity": 8,
-        "tv": true,
-        "stereo": false
-    },
-    {
-        "id": 4,
-        "name": "Haga",
-        "capacity": 4,
-        "tv": true,
-        "stereo": true
-    },
-    {
-        "id": 5,
-        "name": "Röda Sten",
-        "capacity": 12,
-        "tv": true,
-        "stereo": true
-    }
+  {
+    "id": 1,
+    "name": "Liseberg",
+    "capacity": 10,
+    "tv": true,
+    "stereo": true
+  },
+  {
+    "id": 2,
+    "name": "Ullevi",
+    "capacity": 6,
+    "tv": false,
+    "stereo": false
+  },
+  {
+    "id": 3,
+    "name": "Skansen",
+    "capacity": 8,
+    "tv": true,
+    "stereo": false
+  },
+  {
+    "id": 4,
+    "name": "Haga",
+    "capacity": 4,
+    "tv": true,
+    "stereo": true
+  },
+  {
+    "id": 5,
+    "name": "Röda Sten",
+    "capacity": 12,
+    "tv": true,
+    "stereo": true
+  },
+  {
+    "id": 6,
+    "name": "Scandinavium",
+    "capacity": 8,
+    "tv": true,
+    "stereo": true
+  }
 ]

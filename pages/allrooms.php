@@ -1,6 +1,6 @@
 <?php
-    $pageTitle   = 'Dashboard';
-    $pageHeading = 'Uppgifter';
+    $pageTitle   = 'Boka rum';
+    $pageHeading = 'Boka ett rum';
 require_once __DIR__.'/../includes/auth_guard.php';
 require_once __DIR__.'/../includes/header.php';
 require_once __DIR__.'/../classes/RoomManager.php';
@@ -25,8 +25,6 @@ if ($filter === 'free' && $day !== '' && $timeSlot !== '') {
 }
 
 ?>
-
-<h1>Boka ett rum</h1>
 
 <div class="new-room-form ">
 <h2>Lägg till ett nytt rum</h2>

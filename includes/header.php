@@ -19,7 +19,6 @@
             <a class="app-header__link" href="/pages/dashboard.php">Startsida</a>
             <a class="app-header__link" href="/pages/allrooms.php">Boka rum</a>
             <a class="app-header__link" href="/pages/users.php">Användare</a>
-            <a class="app-header__link" href="/pages/settings.php">Inställningar</a>
             <a class="app-header__link app-header__link--logout" href="/logout.php">Logga ut</a>
           </nav>
 
